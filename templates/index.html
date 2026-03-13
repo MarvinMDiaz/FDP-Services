@@ -1,0 +1,484 @@
+{% extends "base.html" %}
+
+{# Image URLs - Security-related images only #}
+{% set images = {
+    'hero': 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=1920&h=1080&fit=crop&q=80',
+    'about_main': url_for('static', filename='images/image.png'),
+    'about_badge': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&q=80',
+    'services': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80',
+    'risk_assessment': url_for('static', filename='images/image copy 2.png'),
+    'leadership': url_for('static', filename='images/leader.jpg'),
+    'approach': url_for('static', filename='images/security.jpg'),
+    'operations': url_for('static', filename='images/image copy.png')
+} %}
+
+{% block content %}
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="container">
+            <div class="hero-inner">
+                <h1 class="hero-title"><span class="hero-title-accent">Elite Protection</span>, Anytime, Anywhere</h1>
+                <p class="hero-subtitle">We are here for you because this is what we do. For all your needs, we are who you need. We cover the plane and bring you peace.</p>
+                <p class="hero-supporting">Trusted protection services for executives, leaders, and families.</p>
+                <a href="#contact" class="btn btn-primary btn-hero">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section - Light Section -->
+<section id="about" class="about about-light">
+    <div class="container">
+        <div class="split-layout">
+            <div class="split-left">
+                <p class="section-eyebrow">WHO WE ARE</p>
+                <h2 class="section-title">Who We Are</h2>
+                <p class="about-intro">First Defender Protective Services delivers elite protection services built on military-grade expertise, law enforcement precision, and intelligence-driven operations. We protect executives, political leaders, families, and assets through proactive threat assessment, strategic planning, and flawless execution.</p>
+                <p class="about-detail">Our commitment to excellence ensures that every detail is covered and every threat is anticipated. We combine tactical precision with strategic intelligence to provide unwavering security that enables our clients to operate with confidence.</p>
+                
+                <ul class="about-features">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Client-Centered Service</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Elite Personnel & Training</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Intelligence-Driven Protection</span>
+                    </li>
+                </ul>
+                
+                <a href="#contact" class="btn btn-primary">Request a Consultation</a>
+            </div>
+            
+            <div class="split-right">
+                <div class="about-image-wrapper">
+                    <div class="about-image-card">
+                        <img src="{{ images.about_main }}" alt="Professional aviation and security operations" class="about-main-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner Section -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-banner-content">
+            <h2 class="cta-headline">Ready to Discuss Your Protection Plan?</h2>
+            <p class="cta-subtext">Tell us what you need—our team responds within 24 hours.</p>
+            
+            <div class="cta-trust-points">
+                <div class="cta-trust-item">
+                    <i class="fas fa-user-secret"></i>
+                    <span>Discreet Professionals</span>
+                </div>
+                <div class="cta-trust-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Tailored Coverage</span>
+                </div>
+                <div class="cta-trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Strategic Planning</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary btn-cta-primary">Request a Consultation</a>
+                <a href="#services" class="btn btn-secondary btn-cta-secondary">View Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section - Light Section -->
+<section id="services" class="services services-light">
+    <div class="container">
+        <p class="section-eyebrow section-eyebrow-centered">OUR SERVICES</p>
+        <h2 class="section-title section-title-centered">Services We Provide</h2>
+        <p class="services-intro">At First Defender Protective Services, we deliver elite, tailored protection built on military, law enforcement, and intelligence expertise.</p>
+        <div class="services-grid services-grid-light">
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Residential Security</h3>
+                <p>Your home is your sanctuary. We protect your family, property, and privacy with advanced surveillance, access control, and round-the-clock monitoring.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Domestic & International Security</h3>
+                <p>Comprehensive protection that transcends borders. Our security solutions protect against terrorism, crime, and transnational threats.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-suitcase-rolling"></i>
+                </div>
+                <h3>Travel Security</h3>
+                <p>Seamless protection for every journey. We handle accommodations, vehicles, routes, and risk assessments—so you can focus on your mission.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-user-secret"></i>
+                </div>
+                <h3>Personal Security & Bodyguard Services</h3>
+                <p>Discreet, tailored close protection by military and law enforcement veterans. Invisible when you need discretion, visible when you need presence.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Advanced Surveillance</h3>
+                <p>24/7 monitoring, detection, and counter-surveillance systems that identify and neutralize threats before they escalate.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Political Leader Protection</h3>
+                <p>When stakes are high and visibility is critical, trust matters. Our elite agents deliver discreet, proactive security for leaders, families, and staff.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Event & Venue Security</h3>
+                <p>Professional security services for corporate events, conferences, and private gatherings. Comprehensive threat assessment, access control, and on-site protection.</p>
+            </div>
+            
+            <div class="service-card service-card-light">
+                <div class="service-icon-circle">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Risk Assessment & Consulting</h3>
+                <p>Comprehensive threat analysis and security audits for locations, travel routes, and operations. Intelligence-driven assessments identify vulnerabilities and provide actionable recommendations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Section -->
+<section id="leadership" class="leadership section-dark">
+    <div class="container">
+        <div class="split-layout split-reverse">
+            <div class="split-left">
+                <p class="section-subtitle">Leadership</p>
+                <h2 class="section-title">Our Leadership</h2>
+                <p class="section-intro">With extensive experience in executive protection and risk management, our leadership brings unparalleled expertise to every operation. Our CEO has dedicated his career to setting the benchmark for security excellence, combining tactical precision with strategic intelligence.</p>
+                <p class="leadership-detail">Trust, precision, and reliability aren't just words—they're the foundation of every decision we make. Our leadership team's commitment to excellence ensures that when you choose First Defender, you're choosing protection that exceeds expectations.</p>
+                <div class="leadership-highlight">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <strong>Setting the Standard</strong>
+                        <p>Dedicated to excellence in executive protection and security services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="image-container">
+                    <img src="{{ images.leadership }}" alt="Leadership team" class="section-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Field Operations Section -->
+<section id="operations" class="operations section-light">
+    <div class="container">
+        <div class="split-layout">
+            <div class="split-left">
+                <p class="section-subtitle">Field Operations</p>
+                <h2 class="section-title">Excellence in Execution</h2>
+                <p class="section-intro">Our field operations team represents the pinnacle of protection expertise. Every agent brings advanced protection techniques honed through years of service in law enforcement and military environments.</p>
+                
+                <div class="operations-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Tactical Awareness</strong>
+                            <p>Strategic thinking applied to every operation</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Adaptive Excellence</strong>
+                            <p>Seamless adaptation across diverse environments</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong>Proactive Protection</strong>
+                            <p>We anticipate threats before they materialize</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="image-container">
+                    <img src="{{ images.operations }}" alt="Professional executive protection and security operations team" class="section-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Approach Section -->
+<section id="approach" class="approach section-dark">
+    <div class="container">
+        <p class="section-subtitle section-subtitle-centered">Our Approach</p>
+        <h2 class="section-title section-title-centered">How We Work</h2>
+        <div class="approach-content">
+            <div class="approach-steps">
+                <div class="approach-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Assess</h3>
+                    <p>We conduct comprehensive threat and vulnerability assessments to understand your unique security landscape.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Plan</h3>
+                    <p>Our experts develop tailored security strategies that align with your objectives and operational requirements.</p>
+                </div>
+                <div class="approach-step">
+                    <div class="step-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Execute</h3>
+                    <p>We deploy proven protection protocols with precision, monitoring and adapting as circumstances evolve.</p>
+                </div>
+            </div>
+            <div class="approach-image">
+                <img src="{{ images.approach }}" alt="Strategic planning process" class="section-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Industries Section -->
+<section id="industries" class="industries section-light">
+    <div class="container">
+        <p class="section-subtitle section-subtitle-centered">Who We Serve</p>
+        <h2 class="section-title section-title-centered">Industries & Use Cases</h2>
+        <p class="section-intro section-intro-centered">We provide specialized protection services across diverse sectors, each with unique security requirements.</p>
+        <div class="industries-grid">
+            <div class="industry-card">
+                <i class="fas fa-briefcase"></i>
+                <h3>Executives</h3>
+                <p>Comprehensive protection for C-suite leaders and high-profile business professionals.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-landmark"></i>
+                <h3>Political Leaders</h3>
+                <p>Discreet security services for elected officials, candidates, and their families.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-users"></i>
+                <h3>Families</h3>
+                <p>Residential and personal protection for high-net-worth families and individuals.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Corporate Events</h3>
+                <p>Security solutions for conferences, product launches, and corporate gatherings.</p>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-plane"></i>
+                <h3>Travel</h3>
+                <p>International and domestic travel security for business and personal trips.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Risk Assessment Section -->
+<section id="risk" class="risk-assessment section-dark">
+    <div class="container">
+        <div class="split-layout split-reverse">
+            <div class="split-left">
+                <p class="section-eyebrow">STRATEGIC PLANNING</p>
+                <h2 class="section-title">Comprehensive Risk Assessment & Strategic Planning</h2>
+                <p class="section-intro">Effective protection begins with thorough assessment. Our comprehensive risk evaluation process analyzes threats, vulnerabilities, and operational environments to develop strategic security plans tailored to your specific needs.</p>
+                <p class="risk-detail">We examine every angle—from physical security gaps to digital vulnerabilities, from travel route risks to venue assessments. Our intelligence-driven approach ensures that your protection plan is not just comprehensive, but strategically optimized.</p>
+                <div class="risk-cta">
+                    <a href="#contact" class="btn btn-primary">Request an Assessment</a>
+                </div>
+            </div>
+            <div class="split-right">
+                <div class="risk-image-wrapper">
+                    <div class="risk-image-card">
+                        <img src="{{ images.risk_assessment }}" alt="Security command center and risk assessment planning" class="risk-main-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="faq section-dark">
+    <div class="container">
+        <p class="section-subtitle section-subtitle-centered">Frequently Asked Questions</p>
+        <h2 class="section-title section-title-centered">Common Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What types of protection services do you offer?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer comprehensive protection services including residential security, travel security, personal bodyguard services, event security, political leader protection, advanced surveillance, and risk assessment consulting. Each service is tailored to meet your specific security needs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How do you assess security risks?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Our risk assessment process involves comprehensive analysis of threats, vulnerabilities, and operational environments. We examine physical security, digital vulnerabilities, travel routes, venues, and other factors to develop strategic security plans tailored to your situation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What is your response time for new clients?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We aim to respond to all inquiries within 24 hours. For urgent security needs, we can arrange expedited consultations. Response times may vary based on the complexity of your requirements and current operational commitments.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do you provide services internationally?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we provide both domestic and international security services. Our team has experience operating across multiple countries and can coordinate protection services for international travel and operations.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>How do you ensure discretion and confidentiality?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Discretion and confidentiality are fundamental to our operations. All team members are bound by strict confidentiality agreements. We operate with low-profile protocols and maintain the highest standards of professional discretion.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What qualifications do your security personnel have?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Our security personnel come from backgrounds in law enforcement, military service, and specialized executive protection training. All team members undergo rigorous training and continuous professional development to maintain the highest standards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact section-light">
+    <div class="container">
+        <h2 class="section-title section-title-centered">Contact Us!</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Ready to Get Started?</h3>
+                <p>Your security journey starts here. Fill out the form below and our team will contact you within 24 hours. We're ready when you are—let's discuss how we can protect what matters most to you.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>240-729-3439</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@fdpservices.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Response Time</strong>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <form method="POST" action="{{ url_for('main.index') }}" class="contact-form">
+                {{ form.hidden_tag() }}
+                
+                <div class="form-group">
+                    {{ form.first_name.label(class="form-label") }}
+                    {{ form.first_name(class="form-input") }}
+                    {% if form.first_name.errors %}
+                        <span class="error-message">{{ form.first_name.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.email.label(class="form-label") }}
+                    {{ form.email(class="form-input") }}
+                    {% if form.email.errors %}
+                        <span class="error-message">{{ form.email.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group form-group-optional">
+                    {{ form.phone.label(class="form-label") }}
+                    {{ form.phone(class="form-input") }}
+                    {% if form.phone.errors %}
+                        <span class="error-message">{{ form.phone.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.subject.label(class="form-label") }}
+                    {{ form.subject(class="form-input") }}
+                    {% if form.subject.errors %}
+                        <span class="error-message">{{ form.subject.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.message.label(class="form-label") }}
+                    {{ form.message(class="form-textarea") }}
+                    {% if form.message.errors %}
+                        <span class="error-message">{{ form.message.errors[0] }}</span>
+                    {% endif %}
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
