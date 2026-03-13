@@ -43,8 +43,9 @@ def index():
                 
                 if email_sent:
                     flash('Thank you for your message! We will get back to you soon.', 'success')
-                    # Reset form after successful submission to prevent resubmission
-                    form = ContactForm()
+                    # Redirect after successful submission to clear form and refresh page
+                    # Scroll to contact section to show success message
+                    return redirect(url_for('main.index', _anchor='contact'))
                 else:
                     flash('Your message was received, but there was an issue sending the notification. Please try again or contact us directly.', 'error')
                 
