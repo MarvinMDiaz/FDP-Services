@@ -510,14 +510,17 @@ body {
     
     .hero-title {
         font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
     }
     
     .hero-subtitle {
         font-size: 1rem;
+        margin-bottom: var(--spacing-sm);
     }
     
     .hero-supporting {
         font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
     }
     
     .btn-hero {
@@ -531,11 +534,12 @@ body {
     
     .hero-content {
         padding: var(--spacing-md) var(--spacing-sm);
+        min-height: calc(100vh - 64px);
     }
     
     .hero-inner {
         text-align: center;
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
     }
 }
 
@@ -546,14 +550,25 @@ body {
     
     .hero-title {
         font-size: 1.75rem;
+        margin-bottom: var(--spacing-xs);
     }
     
     .hero-subtitle {
         font-size: 0.95rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .hero-supporting {
+        margin-bottom: var(--spacing-sm);
     }
     
     .hero-content {
-        padding: var(--spacing-md) var(--spacing-xs);
+        padding: var(--spacing-sm) var(--spacing-xs);
+        min-height: calc(100vh - 60px);
+    }
+    
+    .hero-inner {
+        padding: var(--spacing-xs);
     }
 }
 
@@ -614,21 +629,31 @@ section + section {
 
 @media (max-width: 768px) {
     .section-light {
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-md) 0;
     }
     
     section {
-        padding: var(--spacing-lg) 0;
+        padding: var(--spacing-md) 0;
+    }
+    
+    /* Consistent vertical rhythm for mobile */
+    section + section {
+        padding-top: var(--spacing-md);
     }
 }
 
 @media (max-width: 480px) {
     .section-light {
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-sm) 0;
     }
     
     section {
-        padding: var(--spacing-md) 0;
+        padding: var(--spacing-sm) 0;
+    }
+    
+    /* Consistent vertical rhythm for small mobile */
+    section + section {
+        padding-top: var(--spacing-sm);
     }
 }
 
@@ -655,25 +680,14 @@ section + section {
 @media (max-width: 768px) {
     .section-title {
         font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1.75rem;
         margin-bottom: var(--spacing-sm);
     }
 }
 
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 480px) {
     .section-title {
         font-size: 1.75rem;
+        margin-bottom: var(--spacing-xs);
     }
 }
 
@@ -699,6 +713,11 @@ section + section {
         font-size: 2rem;
     }
     
+    .section-intro {
+        margin-bottom: var(--spacing-md);
+        font-size: 1rem;
+    }
+    
     .subsection-title {
         font-size: 1.25rem;
     }
@@ -709,6 +728,14 @@ section + section {
     
     .faq-question {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-intro {
+        margin-bottom: var(--spacing-sm);
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 }
 
