@@ -70,9 +70,15 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
 @media (max-width: 480px) {
     .container {
-        padding: 0 var(--spacing-xs);
+        padding: 0 var(--spacing-md);
     }
 }
 
@@ -563,12 +569,12 @@ body {
     }
     
     .hero-content {
-        padding: var(--spacing-sm) var(--spacing-xs);
+        padding: var(--spacing-sm);
         min-height: calc(100vh - 60px);
     }
     
     .hero-inner {
-        padding: var(--spacing-xs);
+        padding: var(--spacing-sm);
     }
 }
 
@@ -636,6 +642,11 @@ section + section {
         padding: var(--spacing-md) 0;
     }
     
+    /* Ensure all sections respect container padding */
+    section .container {
+        padding: 0 var(--spacing-md) !important;
+    }
+    
     /* Consistent vertical rhythm for mobile */
     section + section {
         padding-top: var(--spacing-md);
@@ -649,6 +660,11 @@ section + section {
     
     section {
         padding: var(--spacing-sm) 0;
+    }
+    
+    /* Ensure all sections respect container padding on small mobile */
+    section .container {
+        padding: 0 var(--spacing-md) !important;
     }
     
     /* Consistent vertical rhythm for small mobile */
@@ -1230,6 +1246,18 @@ section + section {
     border-bottom: 1px solid var(--border-color);
 }
 
+@media (max-width: 768px) {
+    .cta-banner .container {
+        padding: 0 var(--spacing-md) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-banner .container {
+        padding: 0 var(--spacing-md) !important;
+    }
+}
+
 .cta-banner-content {
     text-align: center;
     max-width: 800px;
@@ -1612,7 +1640,7 @@ section + section {
     /* Prevent horizontal overflow */
     .leadership .container {
         overflow-x: hidden;
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-md) !important;
     }
     
     .leadership {
@@ -1626,11 +1654,11 @@ section + section {
     .leadership .split-left > .section-title,
     .leadership .split-left > .section-intro,
     .leadership .split-left > .leadership-detail {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
     }
     
     .leadership .split-right {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
     }
     
     .leadership .image-container {
@@ -1734,8 +1762,17 @@ section + section {
 
 .approach-step {
     display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.step-header-wrapper {
+    display: flex;
+    align-items: center;
     gap: var(--spacing-md);
-    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .step-icon {
@@ -1757,8 +1794,9 @@ section + section {
 .approach-step h3 {
     font-size: 1.5rem;
     color: var(--section-text-heading);
-    margin-bottom: var(--spacing-xs);
+    margin: 0;
     font-weight: 600;
+    flex: 1;
 }
 
 .approach-step p {
@@ -1766,6 +1804,8 @@ section + section {
     line-height: 1.7;
     margin: 0;
     max-width: 50ch;
+    text-align: center;
+    width: 100%;
 }
 
 .approach-image {
@@ -1787,8 +1827,7 @@ section + section {
         min-height: 300px;
     }
     
-    .approach-step {
-        flex-direction: column;
+    .step-header-wrapper {
         gap: var(--spacing-sm);
     }
     
@@ -1800,6 +1839,10 @@ section + section {
     .approach-step h3 {
         font-size: 1.25rem;
     }
+    
+    .approach-step p {
+        text-align: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1809,6 +1852,10 @@ section + section {
     
     .approach-step h3 {
         font-size: 1.125rem;
+    }
+    
+    .approach-step p {
+        text-align: center;
     }
 }
 
@@ -2045,7 +2092,7 @@ section + section {
     /* Prevent horizontal overflow */
     .risk-assessment .container {
         overflow-x: hidden;
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-md) !important;
     }
     
     .risk-assessment {
@@ -2058,11 +2105,11 @@ section + section {
     .risk-assessment .section-title,
     .risk-assessment .section-intro,
     .risk-assessment .risk-detail {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
     }
     
     .risk-assessment .risk-image-wrapper {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
         max-width: 100%;
     }
     
@@ -2071,7 +2118,7 @@ section + section {
     }
     
     .risk-assessment .risk-cta {
-        padding: 0 var(--spacing-xs);
+        padding: 0;
     }
 }
 
@@ -2247,13 +2294,12 @@ section + section {
 @media (max-width: 768px) {
     /* Improve mobile flow and consistency */
     .contact .container {
-        padding: 0 var(--spacing-md);
+        padding: 0 var(--spacing-md) !important;
         max-width: 100%;
     }
     
     .contact .section-title {
         margin-bottom: var(--spacing-lg);
-        padding: 0 var(--spacing-sm);
     }
     
     .contact-wrapper {
@@ -2325,7 +2371,7 @@ section + section {
 
 @media (max-width: 480px) {
     .contact .container {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-md) !important;
     }
     
     .contact-wrapper {
