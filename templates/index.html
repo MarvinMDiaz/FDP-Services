@@ -1,5 +1,90 @@
 {% extends "base.html" %}
 
+{# SEO Meta Tags #}
+{% block title %}First Defender Protective Services - Elite Executive Protection & Security Services{% endblock %}
+{% block seo_description %}First Defender Protective Services delivers elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations. Residential security, travel security, personal bodyguard services, and risk assessment.{% endblock %}
+{% block seo_keywords %}executive protection, bodyguard services, security services, personal protection, travel security, residential security, political leader protection, risk assessment, executive security, close protection, executive bodyguard, corporate security{% endblock %}
+{% block canonical_url %}{{ request.url_root }}{% endblock %}
+{% block og_type %}website{% endblock %}
+{% block og_title %}First Defender Protective Services - Elite Executive Protection & Security Services{% endblock %}
+{% block og_description %}Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.{% endblock %}
+{% block og_image %}{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}{% endblock %}
+{% block og_url %}{{ request.url_root }}{% endblock %}
+{% block twitter_title %}First Defender Protective Services - Elite Executive Protection & Security Services{% endblock %}
+{% block twitter_description %}Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.{% endblock %}
+{% block twitter_image %}{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}{% endblock %}
+
+{# Structured Data for Homepage #}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "First Defender Protective Services",
+    "image": "{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}",
+    "description": "Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+    },
+    "telephone": "+1-240-729-3439",
+    "email": "info@fdpservices.com",
+    "url": "{{ request.url_root }}",
+    "priceRange": "$$$",
+    "serviceArea": {
+        "@type": "Country",
+        "name": "United States"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Protection Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Residential Security",
+                    "description": "Advanced surveillance, access control, and round-the-clock monitoring for your home and family."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Travel Security",
+                    "description": "Seamless protection for every journey, handling accommodations, vehicles, routes, and risk assessments."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Personal Security & Bodyguard Services",
+                    "description": "Discreet, tailored close protection by military and law enforcement veterans."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Political Leader Protection",
+                    "description": "Discreet, proactive security for leaders, families, and staff."
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Risk Assessment & Consulting",
+                    "description": "Comprehensive threat analysis and security audits for locations, travel routes, and operations."
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
 {# Image URLs - Security-related images only #}
 {% set images = {
     'hero': 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=1920&h=1080&fit=crop&q=80',
@@ -60,7 +145,7 @@
             <div class="split-right">
                 <div class="about-image-wrapper">
                     <div class="about-image-card">
-                        <img src="{{ images.about_main }}" alt="Professional aviation and security operations" class="about-main-image">
+                        <img src="{{ images.about_main }}" alt="Professional aviation and security operations" class="about-main-image" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -191,7 +276,7 @@
             </div>
             <div class="split-right">
                 <div class="image-container">
-                    <img src="{{ images.leadership }}" alt="Leadership team" class="section-image">
+                    <img src="{{ images.leadership }}" alt="Leadership team" class="section-image" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -233,7 +318,7 @@
             </div>
             <div class="split-right">
                 <div class="image-container">
-                    <img src="{{ images.operations }}" alt="Professional executive protection and security operations team" class="section-image">
+                    <img src="{{ images.operations }}" alt="Professional executive protection and security operations team" class="section-image" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
@@ -276,7 +361,7 @@
                 </div>
             </div>
             <div class="approach-image">
-                <img src="{{ images.approach }}" alt="Strategic planning process" class="section-image">
+                <img src="{{ images.approach }}" alt="Strategic planning process" class="section-image" loading="lazy" decoding="async">
             </div>
         </div>
     </div>
@@ -334,7 +419,7 @@
             <div class="split-right">
                 <div class="risk-image-wrapper">
                     <div class="risk-image-card">
-                        <img src="{{ images.risk_assessment }}" alt="Security command center and risk assessment planning" class="risk-main-image">
+                        <img src="{{ images.risk_assessment }}" alt="Security command center and risk assessment planning" class="risk-main-image" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -409,7 +494,7 @@
 <!-- Contact Section -->
 <section id="contact" class="contact section-light">
     <div class="container">
-        <h2 class="section-title section-title-centered">Contact Us!</h2>
+        <h2 class="section-title section-title-centered">Contact Us</h2>
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h3>Ready to Get Started?</h3>

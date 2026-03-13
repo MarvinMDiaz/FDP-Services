@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="First Defender Protective Services - Elite protection services for executives and travelers">
-    <title>{% block title %}First Defender Protective Services{% endblock %}</title>
+    <meta name="robots" content="index, follow">
+    
+    <!-- SEO Meta Tags -->
+    <title>{% block title %}First Defender Protective Services - Elite Executive Protection Services{% endblock %}</title>
+    <meta name="description" content="{% block seo_description %}First Defender Protective Services delivers elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.{% endblock %}">
+    <meta name="keywords" content="{% block seo_keywords %}executive protection, bodyguard services, security services, personal protection, travel security, residential security, political leader protection, risk assessment, executive security{% endblock %}">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical_url %}{{ request.url }}{% endblock %}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}First Defender Protective Services - Elite Executive Protection Services{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}{% endblock %}">
+    <meta property="og:url" content="{% block og_url %}{{ request.url }}{% endblock %}">
+    <meta property="og:site_name" content="First Defender Protective Services">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}First Defender Protective Services - Elite Executive Protection Services{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}{% endblock %}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
     <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    
+    <!-- Preconnect to external image CDN for hero background -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +43,58 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "First Defender Protective Services",
+        "alternateName": "FDP Services",
+        "url": "{{ request.url_root }}",
+        "logo": "{{ request.url_root }}{{ url_for('static', filename='images/logo.png') }}",
+        "description": "Elite protection services for executives, political leaders, and families. Military-grade expertise, law enforcement precision, and intelligence-driven operations.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-240-729-3439",
+            "contactType": "Customer Service",
+            "email": "info@fdpservices.com",
+            "availableLanguage": "English"
+        },
+        "sameAs": []
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "First Defender Protective Services",
+        "url": "{{ request.url_root }}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ request.url_root }}?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    {% block structured_data %}{% endblock %}
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <!-- Navbar -->
-    {% include 'partials/navbar.html' %}
+    <!-- Header -->
+    <header>
+        <!-- Navbar -->
+        {% include 'partials/navbar.html' %}
+    </header>
     
     <!-- Main Content -->
     <main>

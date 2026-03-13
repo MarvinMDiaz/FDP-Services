@@ -1,9 +1,10 @@
 """
 Main controller for handling routes
 """
-from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app
+from flask import Blueprint, render_template, request, flash, redirect, url_for, current_app, Response
 from models.contact import ContactForm
 from utils.email_service import send_contact_email, send_confirmation_email
+from datetime import datetime
 import logging
 
 logger = logging.getLogger(__name__)
@@ -62,3 +63,50 @@ def index():
                         flash(f'{field.replace("_", " ").title()}: {error}', 'error')
     
     return render_template('index.html', form=form)
+
+
+@main_bp.route('/sitemap.xml')
+def sitemap():
+    """Generate XML sitemap for search engines"""
+    base_url = request.url_root.rstrip('/')
+    
+    # Get current date in W3C format
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    
+    # Define all routes with their priorities and change frequencies
+    routes = [
+        {
+            'loc': f'{base_url}/',
+            'changefreq': 'weekly',
+            'priority': '1.0',
+            'lastmod': current_date
+        }
+    ]
+    
+    # Generate XML sitemap
+    sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    
+    for route in routes:
+        sitemap_xml += '  <url>\n'
+        sitemap_xml += f'    <loc>{route["loc"]}</loc>\n'
+        sitemap_xml += f'    <lastmod>{route["lastmod"]}</lastmod>\n'
+        sitemap_xml += f'    <changefreq>{route["changefreq"]}</changefreq>\n'
+        sitemap_xml += f'    <priority>{route["priority"]}</priority>\n'
+        sitemap_xml += '  </url>\n'
+    
+    sitemap_xml += '</urlset>'
+    
+    return Response(sitemap_xml, mimetype='application/xml')
+
+
+@main_bp.route('/robots.txt')
+def robots():
+    """Generate robots.txt file"""
+    base_url = request.url_root.rstrip('/')
+    robots_txt = f"""User-agent: *
+Allow: /
+
+Sitemap: {base_url}/sitemap.xml
+"""
+    return Response(robots_txt, mimetype='text/plain')
