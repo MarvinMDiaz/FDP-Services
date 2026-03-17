@@ -87,7 +87,7 @@
 
 {# Image URLs - Security-related images only #}
 {% set images = {
-    'hero': 'https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=1920&h=1080&fit=crop&q=80',
+    'hero': url_for('static', filename='images/neighborhood.jpg'),
     'about_main': url_for('static', filename='images/image.png'),
     'about_badge': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&h=200&fit=crop&q=80',
     'services': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&q=80',
@@ -106,7 +106,7 @@
         <div class="container">
             <div class="hero-inner">
                 <h1 class="hero-title"><span class="hero-title-accent">Elite Protection</span>, Anytime, Anywhere</h1>
-                <p class="hero-subtitle">We are here for you because this is what we do. For all your needs, we are who you need. We cover the peaces and bring you peace.</p>
+                <p class="hero-subtitle">We are here for you because this is what we do. For all your needs, we are who you need. We cover the pieces and bring you peace.</p>
                 <p class="hero-supporting">Trusted protection services for executives, leaders, and families.</p>
                 <a href="#contact" class="btn btn-primary btn-hero">Get Started <i class="fas fa-arrow-right"></i></a>
             </div>
