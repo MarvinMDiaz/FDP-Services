@@ -1580,6 +1580,28 @@ section + section {
     margin-top: var(--spacing-md);
 }
 
+.leadership-quote {
+    margin: var(--spacing-md) 0 var(--spacing-md);
+    padding: 0 0 0 1rem;
+    max-width: 65ch;
+    border: none;
+    border-left: 2px solid rgba(242, 140, 40, 0.45);
+}
+
+.leadership-quote p {
+    margin: 0;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.55;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.leadership-quote + .leadership-highlight {
+    margin-top: var(--spacing-md);
+}
+
 .leadership-highlight {
     display: flex;
     gap: var(--spacing-md);
@@ -1678,15 +1700,28 @@ section + section {
         font-size: 1rem;
         line-height: 1.8;
         margin-top: 0;
-        margin-bottom: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
         width: 100%;
         max-width: 100%;
         padding: 0 var(--spacing-sm);
     }
-    
-    /* Card appears after second paragraph */
-    .leadership .leadership-highlight {
+
+    .leadership .leadership-quote {
         order: 6;
+        margin: var(--spacing-md) 0;
+        padding: 0 var(--spacing-sm) 0 calc(var(--spacing-sm) + 1rem);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .leadership .leadership-quote p {
+        font-size: 1rem;
+    }
+    
+    /* Card appears after quote */
+    .leadership .leadership-highlight {
+        order: 7;
         width: 100%;
         max-width: 100%;
         margin-top: 0;
@@ -1721,8 +1756,15 @@ section + section {
     .leadership .split-left > .section-subtitle,
     .leadership .split-left > .section-title,
     .leadership .split-left > .section-intro,
-    .leadership .split-left > .leadership-detail {
+    .leadership .split-left > .leadership-detail,
+    .leadership .split-left > .leadership-quote {
         padding: 0;
+    }
+
+    .leadership .leadership-quote {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0.875rem;
     }
     
     .leadership .split-right {
